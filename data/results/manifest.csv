@@ -1,0 +1,13 @@
+file,benchmark,method,models,problems,rollouts,ranks_per_problem,bytes
+aime__logit_mix.csv,aime,logit_mix,14,60,84000,10..10,420750
+aime__logit_mix_std.csv,aime,logit_mix_std,14,60,84000,10..10,420750
+aime__mask.csv,aime,mask,35,60,210000,10..10,1064429
+aime__no_hint.csv,aime,no_hint,35,60,3971737,256..5908,8023063
+aime__truncate.csv,aime,truncate,35,60,210000,10..10,1064429
+gsm8k__logit_mix.csv,gsm8k,logit_mix,12,256,7798784,32..32,14447891
+gsm8k__mask.csv,gsm8k,mask,12,256,2785280,32..32,5139467
+gsm8k__no_hint.csv,gsm8k,no_hint,12,256,557056,64..64,759426
+gsm8k__truncate.csv,gsm8k,truncate,12,256,2785280,32..32,5139467
+hle__mask.csv,hle,mask,33,176,580800,10..10,2362653
+hle__no_hint.csv,hle,no_hint,33,176,3838560,256..1088,7839069
+hle__truncate.csv,hle,truncate,33,176,580800,10..10,2362653

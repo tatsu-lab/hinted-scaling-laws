@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hinted"
+version = "0.1.0"
+description = "Code and data for Hinted Scaling Laws"
+requires-python = ">=3.11"
+urls = { Repository = "https://github.com/tatsu-lab/hinted-scaling-laws" }
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+    # Graders: AIME (sympy), HLE judge (openai)
+    "sympy>=1.12",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    # Inference: pinned vLLM fork required by hinted.joint_decode. It adds a four-line
+    # `held_request_ids` scheduler skip (see src/hinted/joint_decode/README.md). Linux-only:
+    # local (macOS) installs are for plotting and tests, never inference. Install with
+    # VLLM_USE_PRECOMPILED=1 VLLM_PRECOMPILED_WHEEL_COMMIT=a30addc7548a9a8b9b3323a7bc3eb7d7c4895d1c
+    # (the fork's merge base with upstream main; see README.md), or the build falls back to
+    # nightly kernels that do not match this source.
+    "vllm @ git+https://github.com/RohithKuditipudi/vllm.git@e0ce7b17fcce3c6426162a9763cf12f394fe1db8 ; sys_platform == 'linux'",
+    "torch",
+    "transformers",
+    "huggingface_hub",
+    "fsspec",
+    # Query engine (task server + slurm workers)
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "pydantic>=2.0",
+    "requests>=2.31",
+    "submitit>=1.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "ruff>=0.3.4",
+]
+
+[project.scripts]
+joint-decode-gpu = "hinted.joint_decode.gpu.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "gpu: requires a CUDA GPU and a local vLLM-compatible model",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+# Vendored code keeps its upstream style (120 cols, own lint baseline).
+extend-exclude = ["src/hinted/joint_decode"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]

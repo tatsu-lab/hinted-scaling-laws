@@ -1,0 +1,11 @@
+model,train_flops,bits_per_byte
+delphi_3e18,3e+18,1.238163
+delphi_9e18,9e+18,1.006268
+delphi_2e19,1.8e+19,0.920174
+delphi_3e19,3e+19,0.877976
+delphi_9e19,9e+19,0.784866
+delphi_2e20,1.8e+20,0.695453
+delphi_3e20,3e+20,0.648255
+delphi_1e21,1e+21,0.56726
+delphi_1e22,1e+22,0.436521
+delphi_1e23,1e+23,0.373201

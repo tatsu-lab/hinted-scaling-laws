@@ -1,0 +1,22 @@
+group,model,train_flops,bits_per_byte,accuracy
+delphi_isoflop,isoflop d1024 / L11 / B8,3e+18,1.249653,0.019712
+delphi_isoflop,isoflop d1152 / L12 / B16,9e+18,1.013717,0.025019
+delphi_isoflop,isoflop d1408 / L15 / B16,2e+19,0.921486,0.022745
+delphi_isoflop,isoflop d1536 / L16 / B32,3e+19,0.873957,0.022745
+delphi_isoflop,isoflop d1792 / L18 / B64,9e+19,0.783848,0.021228
+delphi_isoflop,isoflop d2048 / L21 / B64,2e+20,0.690487,0.025019
+delphi_isoflop,isoflop d2304 / L23 / B128,3e+20,0.635417,0.021228
+delphi_heldout,Delphi optimal 1e21,1e+21,0.56312,0.028052
+delphi_heldout,Delphi optimal 1e22,1e+22,0.438392,0.065959
+delphi_heldout,Delphi optimal 1e23,1e+23,0.365565,0.267627
+external,Qwen3-14B-Base,,0.261965,0.845337
+external,OLMo-2-13B,,0.264282,0.724792
+external,Qwen3-8B-Base,,0.265868,0.8279
+external,OLMo-2-7B,,0.27159,0.682335
+external,Qwen3-4B-Base,,0.289257,0.820318
+external,Qwen3-1.7B-Base,,0.291856,0.711903
+external,Marin-8B-Base,,0.292315,0.611069
+external,Qwen3-0.6B-Base,,0.33004,0.497346
+external,Llama-3.1-8B,,0.35411,0.506444
+external,Llama-3.2-3B,,0.392006,0.269901
+external,Llama-3.2-1B,,0.467603,0.062168
