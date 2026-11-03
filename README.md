@@ -1,6 +1,6 @@
 # Hinted Scaling Laws
 
-[arXiv: link to follow]
+[![arXiv](https://img.shields.io/badge/arXiv-2611.02270-b31b1b.svg)](https://arxiv.org/abs/2611.02270)
 
 ![Figure 1: hinting turns a benchmark into a sequence of easier versions indexed by a hint level H; a single joint law in model scale and hint level fits accuracy at every H.](figure1.png)
 
@@ -119,5 +119,10 @@ HLE is graded by an LLM judge (`gpt-5.4-nano`) and needs `OPENAI_API_KEY`.
 ## Citation
 
 ```bibtex
-Coming soon!
+@article{vanadrichem2026hinted,
+  title={Hinted Scaling Laws},
+  author={van Adrichem, Suze and Bailey, Luke and Kuditipudi, Rohith and Ye, Christine and Band, Neil and Ahmed, Ahmed and Duchi, John and Liang, Percy and Hashimoto, Tatsunori},
+  journal={arXiv preprint arXiv:2611.02270},
+  year={2026}
+}
 ```
